@@ -1,0 +1,19 @@
+server:
+  port: 8063
+demo:
+  service:
+    version: 1.0.0
+    
+dubbo:
+  application:
+    name:  spring-boot-dubbo-consumer
+  registry:
+    address: 192.168.184.131:2181
+    protocol: zookeeper
+    check: false
+  protocol:
+    name: dubbo
+    port: -1
+  consumer:
+    check:  false
+    timeout: 3000

@@ -1,0 +1,27 @@
+server:
+  port: 8062
+spring:
+  application:
+    name: spring-boot-dubbo-provider
+demo:
+  service:
+    version: 1.0.0
+    
+dubbo:
+  monitor:    
+    protocol: register
+  consumer:
+    check: false
+    timeout: 3000
+  protocol:
+    name: dubbo
+    port: -1
+  registry:
+    address: zookeeper://192.168.184.131:${embedded.zookeeper.port}
+  scan:
+    base-packages: spring.boot.dubbo.provider
+    
+embedded:
+  zookeeper:
+    port: 2181
+
